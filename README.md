@@ -21,8 +21,6 @@ An SDK for building applications on top of Raydium.
 $ yarn add @raydium-io/raydium-sdk-v2
 ```
 
-**中文说明**: 使用 yarn 包管理器安装 Raydium SDK V2 包。
-
 ## SDK method Demo
 
 **SDK 方法示例**
