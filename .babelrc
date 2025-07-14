@@ -1,3 +1,52 @@
 {
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ]
+}
+/**
+
+这个 `.babelrc` 文件是 Babel 的配置文件，用于设置 JavaScript/TypeScript 代码的转译规则。让我来解释一下这个配置的含义：
+
+```json
+{
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }], "@babel/preset-typescript"]
 }
+```
+
+## 配置解析：
+
+### 1. `@babel/preset-env`
+- **作用**：这是一个智能预设，会根据目标环境自动确定需要转换的 JavaScript 特性
+- **配置**：`{ "targets": { "node": "current" } }`
+- **含义**：`"node": "current"` 表示目标环境是当前运行的 Node.js 版本，Babel 只会转换当前 Node.js 版本不支持的 JavaScript 特性
+
+### 2. `@babel/preset-typescript`
+- **作用**：用于处理 TypeScript 代码
+- **功能**：将 TypeScript 语法转换为 JavaScript，移除类型注解和接口定义
+
+## 实际效果：
+
+这个配置会让 Babel：
+1. 检查当前 Node.js 版本支持的 JavaScript 特性
+2. 只转换当前 Node.js 版本不支持的现代 JavaScript 语法
+3. 将 TypeScript 代码转换为纯 JavaScript
+4. 保持代码的兼容性，确保能在当前 Node.js 环境中运行
+
+## 使用场景：
+
+这种配置特别适合：
+- 开发 Node.js 应用程序
+- 需要支持当前 Node.js 版本的项目
+- 使用 TypeScript 但需要转换为 JavaScript 运行的项目
+- 希望最小化转换，只转换必要的代码
+
+这是一个相对保守但实用的配置，确保代码能在当前 Node.js 环境中正常运行。
+*/
